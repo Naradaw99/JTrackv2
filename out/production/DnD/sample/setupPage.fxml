@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="578.0" prefWidth="1205.0" stylesheets="@stylesheet.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.setup1Controller">
+   <children>
+      <AnchorPane opacity="0.29" prefHeight="571.0" prefWidth="1205.0" styleClass="setup-background-image" stylesheets="@stylesheet.css">
+         <children>
+            <Pane layoutY="-2.0" opacity="0.6" prefHeight="249.0" prefWidth="1205.0" style="-fx-background-color: #000000;" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutY="-17.0" prefHeight="571.0" prefWidth="1205.0">
+         <children>
+            <JFXButton fx:id="setupContinue" layoutX="501.0" layoutY="526.0" onAction="#makeConfig" prefHeight="52.0" prefWidth="185.0" styleClass="btn-continue" stylesheets="@stylesheet.css" text="Continue" textAlignment="CENTER" textOverrun="CLIP">
+               <font>
+                  <Font name="Rubik-Bold" size="17.0" />
+               </font>
+            </JFXButton>
+            <ImageView fitHeight="52.0" fitWidth="308.0" layoutX="458.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../logo.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <Text fill="#ffffffbf" fontSmoothingType="LCD" layoutX="559.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Monthly">
+         <font>
+            <Font name="Rubik-Bold" size="21.0" />
+         </font>
+      </Text>
+      <HBox layoutX="308.0" layoutY="78.0" prefHeight="100.0" prefWidth="590.0">
+         <children>
+            <ToggleButton fx:id="trollInv" mnemonicParsing="false" onAction="#addMonthly" prefHeight="62.0" prefWidth="294.0" stylesheets="@stylesheet.css" text="Troll Invasion" textFill="#ffffff80">
+               <font>
+                  <Font name="Rubik-Bold" size="14.0" />
+               </font>
+            </ToggleButton>
+            <ToggleButton fx:id="godStat" mnemonicParsing="false" prefHeight="62.0" prefWidth="294.0" stylesheets="@stylesheet.css" text="God Statues" textFill="#ffffff80">
+               <font>
+                  <Font name="Rubik-Bold" size="14.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="20.0" />
+               </HBox.margin>
+            </ToggleButton>
+         </children>
+      </HBox>
+      <HBox layoutX="308.0" layoutY="160.0" prefHeight="100.0" prefWidth="590.0">
+         <children>
+            <ToggleButton fx:id="oyester" mnemonicParsing="false" prefHeight="62.0" prefWidth="294.0" stylesheets="@stylesheet.css" text="Oyester" textFill="#ffffff80">
+               <font>
+                  <Font name="Rubik-Bold" size="14.0" />
+               </font>
+            </ToggleButton>
+            <ToggleButton fx:id="premier" mnemonicParsing="false" prefHeight="62.0" prefWidth="294.0" stylesheets="@stylesheet.css" text="Premier Club Vault" textFill="#ffffff80">
+               <font>
+                  <Font name="Rubik-Bold" size="14.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="20.0" />
+               </HBox.margin>
+            </ToggleButton>
+         </children>
+      </HBox>
+      <VBox layoutX="74.0" layoutY="291.0" prefHeight="219.0" prefWidth="1058.0">
+         <children>
+            <HBox prefHeight="62.0" prefWidth="1058.0">
+               <children>
+                  <ToggleButton fx:id="herby" mnemonicParsing="false" prefHeight="62.0" prefWidth="255.0" stylesheets="@stylesheet.css" text="Herby Werby" textFill="#ffffff80">
+                     <font>
+                        <Font name="Rubik-Bold" size="14.0" />
+                     </font>
+                  </ToggleButton>
+                  <ToggleButton fx:id="pengs" mnemonicParsing="false" prefHeight="62.0" prefWidth="255.0" stylesheets="@stylesheet.css" text="Penguins" textFill="#ffffff80">
+                     <font>
+                        <Font name="Rubik-Bold" size="14.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </ToggleButton>
+                  <ToggleButton fx:id="meg" mnemonicParsing="false" prefHeight="62.0" prefWidth="255.0" stylesheets="@stylesheet.css" text="Meg" textFill="#ffffff80">
+                     <font>
+                        <Font name="Rubik-Bold" size="14.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </ToggleButton>
+                  <ToggleButton fx:id="tog" mnemonicParsing="false" prefHeight="62.0" prefWidth="255.0" stylesheets="@stylesheet.css" text="Tears of Guthix" textFill="#ffffff80">
+                     <font>
+                        <Font name="Rubik-Bold" size="14.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </ToggleButton>
+               </children>
+            </HBox>
+            <HBox prefHeight="62.0" prefWidth="1058.0">
+               <children>
+                  <ToggleButton fx:id="rushOfBlood" mnemonicParsing="false" prefHeight="62.0" prefWidth="255.0" stylesheets="@stylesheet.css" text="Rush of Blood" textFill="#ffffff80">
+                     <font>
+                        <Font name="Rubik-Bold" size="14.0" />
+                     </font>
+                  </ToggleButton>
+                  <ToggleButton fx:id="nomad" mnemonicParsing="false" prefHeight="62.0" prefWidth="255.0" stylesheets="@stylesheet.css" text="Memory of Nomad" textFill="#ffffff80">
+                     <font>
+                        <Font name="Rubik-Bold" size="14.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </ToggleButton>
+                  <ToggleButton fx:id="famili" mnemonicParsing="false" prefHeight="62.0" prefWidth="255.0" stylesheets="@stylesheet.css" text="Familiarisation" textFill="#ffffff80">
+                     <font>
+                        <Font name="Rubik-Bold" size="14.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </ToggleButton>
+                  <ToggleButton fx:id="circus" mnemonicParsing="false" prefHeight="62.0" prefWidth="255.0" stylesheets="@stylesheet.css" text="Circus" textFill="#ffffff80">
+                     <font>
+                        <Font name="Rubik-Bold" size="14.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </ToggleButton>
+               </children>
+               <VBox.margin>
+                  <Insets top="5.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox prefHeight="62.0" prefWidth="1058.0">
+               <children>
+                  <ToggleButton fx:id="agoroth" mnemonicParsing="false" prefHeight="62.0" prefWidth="255.0" stylesheets="@stylesheet.css" text="Agoroth" textFill="#ffffff80">
+                     <font>
+                        <Font name="Rubik-Bold" size="14.0" />
+                     </font>
+                  </ToggleButton>
+                  <ToggleButton fx:id="wisps" mnemonicParsing="false" prefHeight="62.0" prefWidth="255.0" stylesheets="@stylesheet.css" text="Wisps of the Grove" textFill="#ffffff80">
+                     <font>
+                        <Font name="Rubik-Bold" size="14.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </ToggleButton>
+                  <ToggleButton fx:id="skeletal" mnemonicParsing="false" prefHeight="62.0" prefWidth="255.0" stylesheets="@stylesheet.css" text="Skeletal Horror" textFill="#ffffff80">
+                     <font>
+                        <Font name="Rubik-Bold" size="14.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </ToggleButton>
+                  <ToggleButton fx:id="invention" mnemonicParsing="false" prefHeight="62.0" prefWidth="255.0" stylesheets="@stylesheet.css" text="Invention Machines" textFill="#ffffff80">
+                     <font>
+                        <Font name="Rubik-Bold" size="14.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </ToggleButton>
+               </children>
+               <VBox.margin>
+                  <Insets top="5.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
+      <Text fill="#ffffffbf" fontSmoothingType="LCD" layoutX="564.0" layoutY="273.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Weekly">
+         <font>
+            <Font name="Rubik-Bold" size="21.0" />
+         </font>
+      </Text>
+   </children>
+   <styleClass>
+      <String fx:value="welcome-background-gradient" />
+      <String fx:value="setup-background-image" />
+   </styleClass>
+</AnchorPane>

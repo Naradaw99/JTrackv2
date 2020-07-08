@@ -1,0 +1,81 @@
+
+.gradient {
+-fx-background-color: linear-gradient(to top right, #000000, #1B1B1B);
+}
+
+.btn-welcome-button {
+	
+  -fx-background-color: linear-gradient(to right, rgba(142, 45, 226, 0.53), rgba(74, 0, 224, 0.53));
+  -fx-background-radius: 890;
+
+  }
+  .btn-welcome-button:hover {
+	
+  -fx-background-color: linear-gradient(to right, rgba(142, 45, 226, 0.8), rgba(74, 0, 224, 0.8));
+  -fx-background-radius: 890;
+
+  }
+  
+.btn-selection{
+	
+  -fx-background-color: linear-gradient(to right, rgba(142, 45, 226, 0.2), rgba(74, 0, 224, 0.2));
+  -fx-background-radius: 890;
+
+  }
+
+.btn-selection:hover{
+	-fx-background-color: linear-gradient(to right, rgba(142, 45, 226, 0.8), rgba(74, 0, 224, 0.8));
+	-fx-text-fill:#ffffff
+	
+}
+
+.toggle-button {
+  -fx-background-color: linear-gradient(to right, rgba(142, 45, 226, 0.2), rgba(74, 0, 224, 0.2));
+  -fx-background-radius: 890;
+  -fx-text-fill:rgba(255, 255, 255, 0.5);
+  -fx-font-family:Rubik;
+  -fx-font-size:14;
+  -fx-text-fill:rgba(255, 255, 255, 0.5);
+  
+}
+.toggle-button:hover {
+  -fx-background-color: linear-gradient(to right, rgba(142, 45, 226, 0.8), rgba(74, 0, 224, 0.8));
+  -fx-background-radius: 200;
+  -fx-text-fill:#ffffff;
+  -fx-text-fill:rgba(255, 255, 255, 0.5);
+}
+.toggle-button:selected {
+  -fx-background-color: linear-gradient(to right, rgba(142, 45, 226, 1), rgba(74, 0, 224, 1));
+  -fx-background-radius: 890;
+  -fx-text-fill:rgba(255, 255, 255, 1);
+}
+
+.btn-continue{
+	-fx-background-color:#f0f0f0;
+	-fx-background-radius: 890;
+	
+}
+  
+  
+
+  
+.welcome-background-gradient{
+	-fx-background-color: linear-gradient(to right, #4b2c70, #33006e);
+}
+
+.welcome-background-image{
+	-fx-background-image: url("wallpaper.png");
+	-fx-background-size: cover;
+	
+}
+
+.welcome-background-gif{
+	-fx-background-image: url("welcomeGif.gif");
+	-fx-background-size: cover;
+	
+}
+
+.setup-background-image{
+	-fx-background-image: url("setupWallpaper.png");
+	-fx-background-size: cover;
+}
