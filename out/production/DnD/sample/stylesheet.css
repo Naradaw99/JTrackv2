@@ -79,3 +79,14 @@
 	-fx-background-image: url("setupWallpaper.png");
 	-fx-background-size: cover;
 }
+
+.tracker-text{
+  -fx-font-family:Rubik;
+  -fx-font-size:16;
+  -fx-fill:#ffffff;
+}
+
+.tracker-hbox{
+	-fx-spacing: 13;
+	-fx-alignment: center;
+}

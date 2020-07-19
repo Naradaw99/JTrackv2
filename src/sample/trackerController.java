@@ -29,16 +29,22 @@ public class trackerController {
             Scanner weeklySc = new Scanner(weeklyFile);
             Scanner dailySc = new Scanner(dailyFile);
 
-            //Monthly
-            HBox mTemp = new HBox();
-            vbox.getChildren().add(new Text("Monthly"));
-            vbox.getChildren().add(mTemp);
-            vbox.getChildren().add(new Text("Monthly2"));
+            //Reading monthly info
+            addText("Monthly");
+            HBox monthlyBar = addHbar();
+            vbox.getChildren().add(monthlyBar);
             while (monthlySc.hasNext()){
                 String name = monthlySc.nextLine();
-                addButton(name, mTemp);
+                addButton(name, monthlyBar);
             }
-            
+
+            //Reading weekly info
+            addText("Weekly");
+            HBox weeklyBar = addHbar();
+            vbox.getChildren().add(weeklyBar);
+
+
+
 
         } catch (FileNotFoundException e) {
             e.printStackTrace();
@@ -52,5 +58,18 @@ public class trackerController {
         temp.setText(buttonName);
         temp.setPrefSize(255,62);
         hbox.getChildren().add(temp);
+    }
+
+    public HBox addHbar(){
+        HBox temp = new HBox();
+        temp.getStyleClass().add("tracker-hbox");
+        vbox.getChildren().add(temp);
+        return temp;
+    }
+
+    public void addText(String name){
+        Text temp = new Text(name);
+        temp.getStyleClass().add("tracker-text");
+        vbox.getChildren().add(temp);
     }
 }

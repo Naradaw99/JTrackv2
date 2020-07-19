@@ -60,6 +60,7 @@ public class setup2Controller {
 
         Parent setup = FXMLLoader.load(getClass().getResource("trackerPage.fxml"));
         Scene setupScene = new Scene(setup);
+        setupScene.getStylesheets().add("sample/stylesheet.css");
         Stage window = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         window.setScene(setupScene);
     }
