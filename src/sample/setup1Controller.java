@@ -6,16 +6,12 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Toggle;
 import javafx.scene.control.ToggleButton;
 import javafx.stage.Stage;
 
 import java.io.BufferedWriter;
-import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.lang.reflect.Array;
-import java.util.ArrayList;
 
 public class setup1Controller {
 
@@ -85,6 +81,8 @@ public class setup1Controller {
                 if (tb.isSelected()){
                     bw1.write(tb.getText());
                     bw1.newLine();
+
+
                 }
             }
 

@@ -21,12 +21,12 @@
                   <Font name="Rubik-Bold" size="17.0" />
                </font>
             </JFXButton>
-            <ImageView fitHeight="52.0" fitWidth="308.0" layoutX="458.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="52.0" fitWidth="308.0" layoutX="458.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../logo.png" />
+                  <Image url="@../media/logo.png" />
                </image>
             </ImageView>
-            <Text fill="WHITE" fontSmoothingType="LCD" layoutX="575.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Daily">
+            <Text fill="#ffffffbf" fontSmoothingType="LCD" layoutX="575.0" layoutY="112.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Daily">
                <font>
                   <Font name="Rubik-Bold" size="21.0" />
                </font>
