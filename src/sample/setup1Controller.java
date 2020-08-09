@@ -1,5 +1,6 @@
 package sample;
 
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -99,10 +100,28 @@ public class setup1Controller {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        Parent setup = FXMLLoader.load(getClass().getResource("setupPageTwo.fxml"));
-        Scene setupScene = new Scene(setup);
-        Stage window = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-        window.setScene(setupScene);
+
+        // separate non-FX thread
+        new Thread() {
+            public void run() {
+                try {
+                    Thread.sleep(140);
+                } catch (InterruptedException ex) {
+                    ex.printStackTrace();
+                }
+                // switch screens on FX thread
+                Platform.runLater(() -> {
+                    try {
+                        Parent setup = FXMLLoader.load(getClass().getResource("setupPageTwo.fxml"));
+                        Scene setupScene = new Scene(setup);
+                        Stage window = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+                        window.setScene(setupScene);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                });
+            }
+        }.start();
     }
 
 }

@@ -1,5 +1,6 @@
 package sample;
 
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -9,6 +10,7 @@ import javafx.scene.control.ToggleButton;
 import javafx.stage.Stage;
 
 import java.io.BufferedWriter;
+import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 
@@ -57,11 +59,25 @@ public class setup2Controller {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        new Thread() {
+            public void run()  {
+                try {
+                    Thread.sleep(140);
+                } catch (InterruptedException ex) {
+                    ex.printStackTrace();
+                }
+                // switch screens on FX thread
+                Platform.runLater(() -> {
+                    try {
+                        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+                        changeToTrackerScreen c = new changeToTrackerScreen(stage);
+                        c.change();
+                    } catch (IOException e) {
+                    }
+                });
+            }
+        }.start();
 
-        Parent setup = FXMLLoader.load(getClass().getResource("trackerPage.fxml"));
-        Scene setupScene = new Scene(setup);
-        setupScene.getStylesheets().add("sample/stylesheet.css");
-        Stage window = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-        window.setScene(setupScene);
+
     }
 }

@@ -1,5 +1,6 @@
 package sample;
 
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -22,7 +23,15 @@ public class welcomePageController {
     private MediaPlayer mp;
     private Media me;
 
-    public void initialize(){
+    Parent setup = FXMLLoader.load(getClass().getResource("setupPage.fxml"));
+    Scene setupScene = new Scene(setup);
+
+
+    public welcomePageController() throws IOException {
+    }
+
+    public void initialize() {
+
         String path = new File("src/media/videoWallpaper.mp4").getAbsolutePath();
         me = new Media(new File(path).toURI().toString());
         mp = new MediaPlayer(me);
@@ -31,15 +40,27 @@ public class welcomePageController {
         mp.setCycleCount(mp.INDEFINITE);
     }
 
-
-    public void nextPage(ActionEvent actionEvent) throws IOException, InterruptedException {
-
-        Parent setup = FXMLLoader.load(getClass().getResource("setupPage.fxml"));
-        Scene setupScene = new Scene(setup);
-        Stage window = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-        window.setScene(setupScene);
-
-
+    public void nextPage(ActionEvent actionEvent) throws InterruptedException {
+        // separate non-FX thread
+        new Thread() {
+            public void run() {
+                try {
+                    Thread.sleep(100);
+                } catch (InterruptedException ex) {
+                    ex.printStackTrace();
+                }
+                // switch screens on FX thread
+                Platform.runLater(() -> {
+                    Stage window = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+                    window.setScene(setupScene);
+                    window.centerOnScreen();
+                });
+            }
+        }.start();
 
     }
+
+
+
 }
+

@@ -3,6 +3,10 @@
 -fx-background-color: linear-gradient(to top right, #000000, #1B1B1B);
 }
 
+.tracker-gradient{
+	-fx-background-color:linear-gradient(to top, #272727, #28243d, #291f52, #2d1666, #340078);
+}
+
 .btn-welcome-button {
 	
   -fx-background-color: linear-gradient(to right, rgba(142, 45, 226, 0.53), rgba(74, 0, 224, 0.53));
@@ -33,8 +37,8 @@
   -fx-background-color: linear-gradient(to right, rgba(142, 45, 226, 0.2), rgba(74, 0, 224, 0.2));
   -fx-background-radius: 890;
   -fx-text-fill:rgba(255, 255, 255, 0.5);
-  -fx-font-family:Rubik;
-  -fx-font-size:14;
+  -fx-font-family:Panton;
+  -fx-font-size:15;
   -fx-text-fill:rgba(255, 255, 255, 0.5);
   
 }
@@ -47,7 +51,7 @@
 .toggle-button:selected {
   -fx-background-color: linear-gradient(to right, rgba(142, 45, 226, 1), rgba(74, 0, 224, 1));
   -fx-background-radius: 890;
-  -fx-text-fill:rgba(255, 255, 255, 1);
+  -fx-text-fill:rgba(255, 255, 255, 0.8);
 }
 
 .btn-continue{
@@ -81,7 +85,7 @@
 }
 
 .tracker-text{
-  -fx-font-family:Rubik;
+  -fx-font-family:Panton;
   -fx-font-size:17;
   -fx-fill:rgba(255, 255, 255, 0.75);
 }
@@ -89,4 +93,21 @@
 .tracker-hbox{
 	-fx-spacing: 13;
 	-fx-alignment: center;
+}
+
+
+
+.buttonIni{
+    -fx-background-color: transparent;
+	-fx-border-color: transparent;
+	-fx-text-fill:rgba(255, 255, 255, 0.6);
+}
+
+.buttonIni:hover {
+	-fx-text-fill:rgba(255, 255, 255, 0.8);
+
+}
+
+.buttonIni:pressed {
+	-fx-text-fill:rgba(255, 255, 255, 0.8);
 }
