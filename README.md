@@ -22,8 +22,8 @@ DnD tracker for Runescape 3.
 <details>  
   <summary>More images</summary>
   
-![setup page](https://i.imgur.com/QdkckBw.png)
-![setup page 2](https://i.imgur.com/FxjwZWi.png)
-![tracker page](https://i.imgur.com/vmxrzPV.png)
+![setup page](https://i.imgur.com/NsqiCSE.png)
+![setup page 2](https://i.imgur.com/GDurq8E.png)
+![tracker page](https://i.imgur.com/lg0f6jy.png)
 
   </details>
