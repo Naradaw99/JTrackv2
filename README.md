@@ -1,4 +1,4 @@
-# JTrack
+# JTrack  
 DnD tracker for Runescape 3.
   
 **Features**  
@@ -18,3 +18,12 @@ DnD tracker for Runescape 3.
 - Share DnD setups
 - Integrate external resources (Vis wax combinations/Voice of Seren status)
 ```
+![welcome page](https://i.imgur.com/vw2GLow.png) 
+<details>  
+  <summary>More images</summary>
+  
+![setup page](https://i.imgur.com/QdkckBw.png)
+![setup page 2](https://i.imgur.com/FxjwZWi.png)
+![tracker page](https://i.imgur.com/vmxrzPV.png)
+
+  </details>
