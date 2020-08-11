@@ -260,13 +260,6 @@ public class trackerController {
             TimeZone tz = TimeZone.getTimeZone("UTC");
             Calendar weeklyReset = Calendar.getInstance(tz);
             Calendar now = Calendar.getInstance(tz);
-            Calendar nowWeek = Calendar.getInstance(tz);
-            nowWeek.set(Calendar.DAY_OF_WEEK, 3);
-            nowWeek.set(Calendar.SECOND, 0);
-            nowWeek.set(Calendar.MINUTE, 0);
-            nowWeek.set(Calendar.HOUR, 24);
-            nowWeek.set(Calendar.AM_PM, Calendar.AM);
-            nowWeek.add(Calendar.DATE, 7);
 
             weeklyReset.set(Calendar.SECOND, 0);
             weeklyReset.set(Calendar.MINUTE, 0);
@@ -274,7 +267,7 @@ public class trackerController {
             weeklyReset.set(Calendar.AM_PM, Calendar.AM);
             weeklyReset.set(Calendar.DAY_OF_WEEK, 3);
 
-            Long hoursBetween = ChronoUnit.HOURS.between(now.toInstant(), nowWeek.toInstant());
+            Long hoursBetween = ChronoUnit.HOURS.between(now.toInstant(), weeklyReset.toInstant());
             Long days = hoursBetween / 24;
             Long hoursLeft = hoursBetween % 24;
 

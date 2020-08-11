@@ -26,7 +26,7 @@ public class Main extends Application {
         } else {
             primaryStage.getIcons().add(new Image("media/icon128128.png"));
             Parent root = FXMLLoader.load(getClass().getResource("welcome.fxml"));
-            primaryStage.setTitle("ZenTracker");
+            primaryStage.setTitle("JTracker");
             primaryStage.setScene(new Scene(root, 990, 400));
             primaryStage.centerOnScreen();
             primaryStage.show();
@@ -40,20 +40,6 @@ public class Main extends Application {
         launch(args);
     }
 
-    public int getCount() {
-        trackerController tc = new trackerController();
-
-        File monthlyFile = new File("monthlyConfig.txt");
-        File weeklyFile = new File("weeklyConfig.txt");
-        File dailyFile = new File("dailyConfig.txt");
-        int count = 0;
-
-        count += tc.getBarCount(monthlyFile);
-        count += tc.getBarCount(weeklyFile);
-        count += tc.getBarCount(dailyFile);
-        return count;
-
-    }
 
     ;
 }

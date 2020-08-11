@@ -46,7 +46,7 @@ public class changeToTrackerScreen {
             height = 600;
 
         }
-        primaryStage.setTitle("ZenTracker");
+        primaryStage.setTitle("JTracker");
         primaryStage.setScene(new Scene(root, width, height));
         primaryStage.show();
         primaryStage.centerOnScreen();
