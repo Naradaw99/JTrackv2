@@ -261,6 +261,7 @@ public class trackerController {
             Calendar weeklyReset = Calendar.getInstance(tz);
             Calendar now = Calendar.getInstance(tz);
 
+            weeklyReset.add(Calendar.DATE,7);
             weeklyReset.set(Calendar.SECOND, 0);
             weeklyReset.set(Calendar.MINUTE, 0);
             weeklyReset.set(Calendar.HOUR, 24);
