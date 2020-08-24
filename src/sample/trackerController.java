@@ -29,6 +29,7 @@ import jdk.swing.interop.SwingInterOpUtils;
 
 import java.io.*;
 import java.sql.Timestamp;
+import java.text.ParseException;
 import java.time.*;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
@@ -54,9 +55,12 @@ public class trackerController {
     ArrayList<ToggleButton> weeklyList;
     ArrayList<ToggleButton> monthlyList;
 
+    private Calendar nextMonth;
+    private Calendar weeklyReset;
 
 
-    enum Type {
+
+    enum dndType {
         DAILY, WEEKLY, MONTHLY;
     }
 
@@ -72,6 +76,8 @@ public class trackerController {
         weeklyFile = new File("weeklyConfig.txt");
         dailyFile = new File("dailyConfig.txt");
 
+        //ResetManager rm = new ResetManager();
+
         try {
             Scanner monthlySc = new Scanner(monthlyFile);
             Scanner weeklySc = new Scanner(weeklyFile);
@@ -85,7 +91,7 @@ public class trackerController {
                 for (int j = 0; j < 4; j++) {
                     try {
                         String buttonName = dailySc.nextLine();
-                        addButton(buttonName, bar, Type.DAILY);
+                        addButton(buttonName, bar, dndType.DAILY);
                     } catch (NoSuchElementException e) {
                     }
                 }
@@ -99,7 +105,7 @@ public class trackerController {
                 for (int j = 0; j < 4; j++) {
                     try {
                         String buttonName = weeklySc.nextLine();
-                        addButton(buttonName, bar, Type.WEEKLY);
+                        addButton(buttonName, bar, dndType.WEEKLY);
                     } catch (NoSuchElementException e) {
                     }
                 }
@@ -111,15 +117,22 @@ public class trackerController {
             vbox.getChildren().add(monthlyBar);
             while (monthlySc.hasNextLine()) {
                 String name = monthlySc.nextLine();
-                addButton(name, monthlyBar, Type.MONTHLY);
+                addButton(name, monthlyBar, dndType.MONTHLY);
             }
 
             timerDaily();
             timerWeekly();
             timerMonthly();
 
+            ResetManager rm = new ResetManager(dailyList,weeklyList,monthlyList);
+            rm.checkResetDaily();
+            rm.checkResetWeekly(weeklyReset);
+            rm.checkResetMonthly(nextMonth);
 
-        } catch (FileNotFoundException e) {
+
+
+
+        } catch (FileNotFoundException | ParseException e) {
             e.printStackTrace();
         }
 
@@ -143,7 +156,7 @@ public class trackerController {
         return tempList;
     }
 
-    public void addButton(String buttonName, HBox hbox, Type t) {
+    public void addButton(String buttonName, HBox hbox, dndType t) {
         ToggleButton temp = new ToggleButton();
         temp.setText(buttonName);
         temp.setOnAction(event -> {
@@ -159,6 +172,7 @@ public class trackerController {
         switch (t) {
             case DAILY:
                 dailyList.add(temp);
+                System.out.println("added a daily");
                 break;
             case WEEKLY:
                 weeklyList.add(temp);
@@ -255,10 +269,8 @@ public class trackerController {
     }
 
     public void timerWeekly() {
-
-        KeyFrame keyFrame = new KeyFrame(Duration.seconds(1), event -> {
             TimeZone tz = TimeZone.getTimeZone("UTC");
-            Calendar weeklyReset = Calendar.getInstance(tz);
+            weeklyReset = Calendar.getInstance(tz);
             Calendar now = Calendar.getInstance(tz);
 
             weeklyReset.add(Calendar.DATE,7);
@@ -267,6 +279,8 @@ public class trackerController {
             weeklyReset.set(Calendar.HOUR, 24);
             weeklyReset.set(Calendar.AM_PM, Calendar.AM);
             weeklyReset.set(Calendar.DAY_OF_WEEK, 3);
+
+        KeyFrame keyFrame = new KeyFrame(Duration.seconds(1), event -> {
 
             Long hoursBetween = ChronoUnit.HOURS.between(now.toInstant(), weeklyReset.toInstant());
             Long days = hoursBetween / 24;
@@ -292,17 +306,17 @@ public class trackerController {
 
     public void timerMonthly() {
 
-        KeyFrame keyFrame = new KeyFrame(Duration.seconds(1), event -> {
             TimeZone tz = TimeZone.getTimeZone("UTC");
             Calendar now = Calendar.getInstance(tz);
 
-            Calendar nextMonth = Calendar.getInstance(tz);
+            nextMonth = Calendar.getInstance(tz);
             nextMonth.add(Calendar.MONTH, 1);
             nextMonth.set(Calendar.DAY_OF_MONTH, 1);
             nextMonth.set(Calendar.SECOND, 0);
             nextMonth.set(Calendar.MINUTE, 0);
             nextMonth.set(Calendar.HOUR, 24);
             nextMonth.set(Calendar.AM_PM, Calendar.AM);
+        KeyFrame keyFrame = new KeyFrame(Duration.seconds(1), event -> {
 
             Long hoursBetween = ChronoUnit.HOURS.between(now.toInstant(), nextMonth.toInstant());
             Long days = hoursBetween / 24;
